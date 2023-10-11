@@ -21,9 +21,13 @@ public class Customer {
         Random rnd = new Random();
         List<Customer> customers = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            customers.add(new Customer(rnd.nextInt(), names[rnd.nextInt(0, 3)], rnd.nextInt(0, 3)));
+            customers.add(new Customer(rnd.nextInt(), names[rnd.nextInt(0, 4)], rnd.nextInt(0, 4)));
         }
         return customers;
+    }
+
+    public int getTier() {
+        return tier;
     }
 
     @Override

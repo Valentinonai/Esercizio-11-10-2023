@@ -14,7 +14,6 @@ public class Order {
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> products;
-
     private Customer customer;
 
     public Order(long id, String status, LocalDate orderDate, List<Product> products, Customer customer) {
@@ -30,10 +29,29 @@ public class Order {
         Random rnd = new Random();
         List<Product> app = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            app.add(product.get(rnd.nextInt(0, product.size() - 1)));
+            app.add(product.get(rnd.nextInt(0, product.size())));
         }
+        int month = rnd.nextInt(1, 5);
+        int day;
+        if (month == 2)
+            day = rnd.nextInt(1, 29);
+        else if (month == 11 || month == 4 || month == 6 || month == 9) {
+            day = rnd.nextInt(1, 31);
+        } else day = rnd.nextInt(1, 32);
+        int year = rnd.nextInt(2021, 2022);
+        return new Order(rnd.nextInt(), statusorder[rnd.nextInt(0, 2)], LocalDate.of(year, month, day), app, customer);
+    }
 
-        return new Order(rnd.nextInt(), statusorder[rnd.nextInt(0, 2)], LocalDate.now(), app, customer);
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 
     public void setDeliveryDate(LocalDate orderDate) {

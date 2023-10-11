@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Product {
     private static String[] names = {"phone", "tv", "videogames", "bike"};
-    private static String[] categories = {"Books", "Baby", "boy"};
+    private static String[] categories = {"Books", "Baby", "Boys"};
     private long id;
     private String name;
     private String category;
@@ -23,13 +23,21 @@ public class Product {
         Random rnd = new Random();
         List<Product> products = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            products.add(new Product(rnd.nextInt(), names[rnd.nextInt(0, 3)], categories[rnd.nextInt(0, 2)], rnd.nextInt(10, 1000)));
+            products.add(new Product(rnd.nextInt(), names[rnd.nextInt(0, 4)], categories[rnd.nextInt(0, 3)], rnd.nextInt(10, 1000)));
         }
         return products;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public double getPrice() {
         return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override

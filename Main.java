@@ -30,7 +30,7 @@ public class Main {
         /*for (Order o : orders) {
             System.out.println(o);
         }*/
-        System.out.println("\n*********************Prodotti con prezzo >100***************************\n");
+        System.out.println("\n*********************Prodotti con prezzo >100 e category Books***************************\n");
 
         esercizio1(products);
 
@@ -49,7 +49,7 @@ public class Main {
 
     public static void esercizio1(List<Product> p) {
 
-        p.stream().filter(x -> x.getPrice() > 100).forEach(x -> System.out.println(x));
+        p.stream().filter(x -> x.getPrice() > 100 && x.getCategory().equals("Books")).forEach(x -> System.out.println(x));
     }
 
     public static void esercizio2(List<Order> o) {

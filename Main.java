@@ -23,9 +23,9 @@ public class Main {
 
         for (int i = 0; i < customers.size(); i++) {
             int n = rnd.nextInt(1, 5);
-            for (int j = 0; j < n; j++) {
-                orders.add(Order.fillOrder(products, customers.get(i), n));
-            }
+
+            orders.add(Order.fillOrder(products, customers.get(i), n));
+
         }
         /*for (Order o : orders) {
             System.out.println(o);

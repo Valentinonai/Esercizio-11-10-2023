@@ -39,7 +39,7 @@ public class Order {
             day = rnd.nextInt(1, 31);
         } else day = rnd.nextInt(1, 32);
         int year = rnd.nextInt(2021, 2022);
-        return new Order(rnd.nextInt(), statusorder[rnd.nextInt(0, 2)], LocalDate.of(year, month, day), app, customer);
+        return new Order(rnd.nextInt(), statusorder[rnd.nextInt(0, 3)], LocalDate.of(year, month, day), app, customer);
     }
 
     public Customer getCustomer() {

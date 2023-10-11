@@ -50,6 +50,10 @@ public class Order {
         return orderDate;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public List<Product> getProducts() {
         return products;
     }

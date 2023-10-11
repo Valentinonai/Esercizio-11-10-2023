@@ -54,7 +54,12 @@ public class Main {
 
     public static void esercizio2(List<Order> o) {
         for (int i = 0; i < o.size(); i++) {
-            o.get(i).getProducts().stream().filter(x -> x.getCategory() == "Baby").forEach(x -> System.out.println(x));
+            List<Product> app = o.get(i).getProducts().stream().filter(x -> x.getCategory() == "Baby").toList();
+            if (app.size() > 0) {
+                System.out.println("ordine: " + o.get(i).getId());
+                System.out.println(app);
+            }
+
         }
     }
 
